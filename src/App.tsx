@@ -1,12 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import { Amplify } from 'aws-amplify'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    console.log('Amplify Configuration');
+    console.log(Amplify.getConfig());
+  }, []);
+  
   return (
     <>
       <section id="center">
